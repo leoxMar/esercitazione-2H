@@ -14,15 +14,38 @@ class Persona():
 
 
 class Studente(Persona):
+    studente=''
 
-      def main(self):
-        return 'si sono un studente e sono '+str(self.nome)
+    def __init__(self,age,nome,cognome,percorso):
+      super().__init__(age,nome,cognome)
+      self.percorso=percorso
+
+    def __str__(self):
+        return 'mi chiamo ' + str(self.nome) + ' ,age=' + str(self.age) + ',cognome='+str(self.cognome)+' ed il mio percorso di studi è '+self.percorso+')'
+
 
 
 class Lavoratore(Persona):
 
-    def main(self):
-        return 'si sono un lavoratore e sono '+str(self.nome)
+    lavoro=''
 
-io=Lavoratore(10,'leo','mark')
-print(io.main())
+    def __init__(self,age,nome,cognome,lavoro):
+      super().__init__(age,nome,cognome)
+      self.lavoro=lavoro
+
+    def __str__(self):
+        return 'mi chiamo ' + str(self.nome) + ' ,age=' + str(self.age) + ',cognome='+str(self.cognome)+' ed il mio lavoro è'+self.lavoro+')'
+
+
+class App(object):
+    def __init__(self):
+        __persona = Persona(12, 'leo', 'marchi')
+        print(__persona)
+        __lavoratore = Lavoratore(23,'UGo','delcolle','muratore')
+        print(__lavoratore)
+        __studente = Studente(23,'UGo','delcolle','matematico')
+        print(__studente)
+        
+
+if __name__ == "__main__":
+    app = App()
